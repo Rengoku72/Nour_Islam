@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نور الذكر | موقع الأذكار والأدعية الإسلامية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #00897b, #0277bd);
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 137, 123, 0.5);
+        }
+        .logo {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        nav {
+            background: linear-gradient(to right, #006064, #01579b);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 151, 167, 0.4);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+        nav ul li {
+            padding: 15px 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #00bcd4;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 151, 167, 0.4);
+        }
+        .card h2 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #00838f;
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px rgba(79, 195, 247, 0.3);
+        }
+        .card p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .source {
+            font-size: 0.9rem;
+            color: #78909c;
+            font-style: italic;
+            text-align: left;
+        }
+        .counter {
+            display: inline-block;
+            margin-right: 20px;
+            background: linear-gradient(135deg, #00695c, #00897b);
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 105, 92, 0.5);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #78909c;
+            border-top: 1px solid #333;
+        }
+        .search {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .search input {
+            padding: 12px 15px;
+            width: 70%;
+            border: none;
+            background-color: #2c2c2c;
+            color: white;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+        }
+        .search button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #00695c, #00897b);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 2px 8px rgba(0, 105, 92, 0.5);
+        }
+        .share-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #262626;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #00bcd4;
+        }
+        .share-container h3 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(79, 195, 247, 0.3);
+        }
+        .share-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .share-link input {
+            padding: 12px;
+            width: 70%;
+            border: none;
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            direction: ltr;
+        }
+        .share-link button {
+            margin-right: 10px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #0277bd, #039be5);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(2, 119, 189, 0.5);
+        }
+        .social-share {
+            margin-top: 20px;
+        }
+        .social-share a {
+            display: inline-block;
+            margin: 0 10px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #0277bd, #039be5);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(2, 119, 189, 0.5);
+        }
+        .social-share a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(3, 155, 229, 0.7);
+        }
+        /* إضافة بعض التأثيرات الضوئية */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+        }
+        /* تنسيق مخصص للأذكار لإظهارها بشكل مميز */
+        .dhikr-text {
+            color: #e0f7fa;
+            font-weight: normal;
+            padding: 10px;
+            border-radius: 8px;
+            background: linear-gradient(rgba(0, 96, 100, 0.1), rgba(0, 131, 143, 0.2));
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.1);
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .search input, .share-link input {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">نور الذكر</h1>
+            <p class="subtitle">حصن المسلم من أذكار الكتاب والسنة</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#morning">أذكار الصباح</a></li>
+                <li><a href="#evening">أذكار المساء</a></li>
+                <li><a href="#prayer">أذكار الصلاة</a></li>
+                <li><a href="#sleep">أذكار النوم</a></li>
+                <li><a href="#general">أدعية متنوعة</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="ابحث عن ذكر أو دعاء...">
+            <button>بحث</button>
+        </div>
+
+        <div class="share-container">
+            <h3 class="glow-text">شارك موقع نور الذكر مع أحبابك</h3>
+            <div class="share-link">
+                <input type="text" value="https://nourAlThikr.com" readonly>
+                <button onclick="alert('تم نسخ الرابط')">نسخ الرابط</button>
+            </div>
+            <div class="social-share">
+                <a href="#" title="مشاركة عبر واتساب">و</a>
+                <a href="#" title="مشاركة عبر تويتر">ت</a>
+                <a href="#" title="مشاركة عبر فيسبوك">ف</a>
+                <a href="#" title="مشاركة عبر تلجرام">تل</a>
+            </div>
+        </div>
+
+        <section id="morning">
+            <div class="card">
+                <h2 class="glow-text">أذكار الصباح</h2>
+                <p class="dhikr-text">
+                    أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَٰهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه أبو داود</p>
+            </div>
+
+            <div class="card">
+                <p class="dhikr-text">
+                    اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَٰهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه البخاري</p>
+            </div>
+        </section>
+
+        <section id="evening">
+            <div class="card">
+                <h2 class="glow-text">أذكار المساء</h2>
+                <p class="dhikr-text">
+                    أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَٰهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه مسلم</p>
+            </div>
+
+            <div class="card">
+                <p class="dhikr-text">
+                    اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللهُ لاَ إِلَٰهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ.
+                    <span class="counter">٤ مرات</span>
+                </p>
+                <p class="source">رواه أبو داود والترمذي</p>
+            </div>
+        </section>
+
+        <section id="prayer">
+            <div class="card">
+                <h2 class="glow-text">أذكار الصلاة</h2>
+                <p class="dhikr-text">
+                    سُبْحَانَ رَبِّيَ الْعَظِيمِ.
+                    <span class="counter">٣ مرات</span>
+                </p>
+                <p class="dhikr-text">
+                    سُبْحَانَ رَبِّيَ الْأَعْلَى.
+                    <span class="counter">٣ مرات</span>
+                </p>
+                <p class="dhikr-text">
+                    رَبَّنَا وَلَكَ الْحَمْدُ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">متفق عليه</p>
+            </div>
+        </section>
+
+        <section id="sleep">
+            <div class="card">
+                <h2 class="glow-text">أذكار النوم</h2>
+                <p class="dhikr-text">
+                    بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه البخاري</p>
+            </div>
+
+            <div class="card">
+                <p class="dhikr-text">
+                    اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.
+                    <span class="counter">٣ مرات</span>
+                </p>
+                <p class="source">رواه أبو داود والترمذي</p>
+            </div>
+        </section>
+
+        <section id="general">
+            <div class="card">
+                <h2 class="glow-text">أدعية متنوعة</h2>
+                <p class="dhikr-text">
+                    رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ.
+                    <span class="counter">مستحب التكرار</span>
+                </p>
+                <p class="source">القرآن الكريم - سورة البقرة ٢٠١</p>
+            </div>
+
+            <div class="card">
+                <p class="dhikr-text">
+                    اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى، وَالْعَفَافَ وَالْغِنَى.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه مسلم</p>
+            </div>
+
+            <div class="card">
+                <p class="dhikr-text">
+                    اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ، وَغَلَبَةِ الرِّجَالِ.
+                    <span class="counter">١ مرة</span>
+                </p>
+                <p class="source">رواه البخاري</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>نور الذكر - موقع الأذكار والأدعية - جميع الحقوق محفوظة © ٢٠٢٥</p>
+            <p>تم تطوير الموقع لنشر الأذكار والأدعية الإسلامية من السنة النبوية</p>
+            <p><a href="https://nourAlThikr.com" style="color: #4fc3f7; text-decoration: none; text-shadow: 0 0 5px rgba(79, 195, 247, 0.3);">www.nourAlThikr.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
